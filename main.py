@@ -59,8 +59,8 @@ if __name__ == '__main__':
             line_num = 0  # track last list number processed
             for line in call_center_data.readlines():
                 line_num += 1
-                if line_num < 51409:  # pick up after error
-                    continue
+                #  if line_num < 51409:  # pick up after error
+                #      continue
                 parts = str.split(line, "\t")
                 address = parts[0]
 
@@ -86,7 +86,7 @@ if __name__ == '__main__':
                                 continue
                         else:
                             continue
-                    # reprint the line with zip first, comma delimited
+                    # reprint the line with zip first, tab delimited
                     parts.insert(0, zip)
                     output(line_num, parts, out_file)
                 else:
@@ -102,6 +102,6 @@ if __name__ == '__main__':
                         if zip is None:
                             continue
                         else:
-                            # reprint the line with zip first, comma delimited
+                            # reprint the line with zip first, tab delimited
                             parts.insert(0, zip)
                             output(line_num, parts, out_file)
